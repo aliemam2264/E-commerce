@@ -42,7 +42,12 @@ const Nav = () => {
             navigate("/login");
           }}
         />
-        <div className="relative">
+        <div
+          className="relative"
+          onClick={() => {
+            navigate("/cart");
+          }}
+        >
           <img src={assets.cart_icon} className="w-5" />
           <span
             className="

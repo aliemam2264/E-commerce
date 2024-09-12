@@ -7,24 +7,40 @@ const Collection = () => {
   const [data, setData] = useState([]);
   const { products, currency } = useContext(AllData);
   const [category, setCategory] = useState([]);
+  const [subCategory, setSubcategory] = useState([]);
 
   useEffect(() => {
     setData(products.slice(0, 52));
   }, []);
 
   useEffect(() => {
-    const productsClone = [...products];
-    if (data.length > 0) {
-      setData(productsClone.filter((el) => category.includes(el.category)));
+    let productsClone = [...products];
+    if (category.length > 0) {
+      productsClone = productsClone.filter((el) =>
+        category.includes(el.category)
+      );
     }
-  }, [category]);
+    if (subCategory.length > 0) {
+      productsClone = productsClone.filter((el) =>
+        subCategory.includes(el.subCategory)
+      );
+    }
+    setData(productsClone);
+  }, [category, subCategory]);
 
   function handleChange(e) {
-    onChange = { handleChange };
     if (category.includes(e.target.value)) {
       setCategory((prev) => prev.filter((el) => el !== e.target.value));
     } else {
       setCategory([...category, e.target.value]);
+    }
+  }
+
+  function handleSubcategory(e) {
+    if (subCategory.includes(e.target.value)) {
+      setSubcategory((prev) => prev.filter((el) => el !== e.target.value));
+    } else {
+      setSubcategory([...subCategory, e.target.value]);
     }
   }
   return (
@@ -54,15 +70,27 @@ const Collection = () => {
         <div className="border border-gray-300 pl-5 py-3 mt-6">
           <h3 className="text-black font-medium text-l mb-3">TYPE</h3>
           <p className="flex gap-2">
-            <input type="checkbox" value="Topwear" onChange={handleChange} />
+            <input
+              type="checkbox"
+              value="Topwear"
+              onChange={handleSubcategory}
+            />
             Topwear
           </p>
           <p className="flex gap-2">
-            <input type="checkbox" value="Bottomwear" onChange={handleChange} />
+            <input
+              type="checkbox"
+              value="Bottomwear"
+              onChange={handleSubcategory}
+            />
             Bottomwear
           </p>
           <p className="flex gap-2">
-            <input type="checkbox" value="Winterwear" onChange={handleChange} />
+            <input
+              type="checkbox"
+              value="Winterwear"
+              onChange={handleSubcategory}
+            />
             Winterwear
           </p>
         </div>

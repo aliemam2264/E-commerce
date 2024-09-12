@@ -5,12 +5,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Title from "./Title";
 import Card from "./Card";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const SelectedCard = () => {
   const [data, setData] = useState([]);
   const [prod, setProd] = useState({});
-  const navigate = useNavigate();
   const { products, currency } = useContext(AllData);
   const { id } = useParams();
 
@@ -80,12 +79,7 @@ const SelectedCard = () => {
               </button>
             </div>
           </div>
-          <button
-            className="bg-black text-white py-3 px-8 active:bg-gray-700"
-            onClick={() => {
-              navigate("/cart");
-            }}
-          >
+          <button className="bg-black text-white py-3 px-8 active:bg-gray-700">
             ADD TO CART
           </button>
           <hr className="mt-8 sm:w-4/5" />
