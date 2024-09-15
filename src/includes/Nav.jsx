@@ -15,7 +15,7 @@ const Nav = () => {
           navigate("/");
         }}
       />
-      <ul className="hidden sm:flex gap-5">
+      <ul className="hidden md:flex gap-5">
         <NavLink to="/" className="flex flex-col items-center">
           <h2>HOME</h2>
           <div className="h-[1.5px] bg-gray-700 w-1/2 hidden"></div>
@@ -58,7 +58,7 @@ const Nav = () => {
         </div>
         <img
           src={assets.menu_icon}
-          className="w-5 sm:hidden"
+          className="w-5 md:hidden"
           onClick={() => setShow(true)}
         />
       </div>
@@ -75,19 +75,35 @@ const Nav = () => {
           <p>Back</p>
         </div>
         <ul className=" flex flex-col gap-8">
-          <NavLink to="/" className="flex flex-col items-center">
+          <NavLink
+            to="/"
+            className="flex flex-col items-center"
+            onClick={() => setShow(false)}
+          >
             <h2>HOME</h2>
             <div className="h-[1.5px] bg-gray-700 w-1/2 hidden"></div>
           </NavLink>
-          <NavLink to="/collection" className="flex flex-col items-center">
+          <NavLink
+            to="/collection"
+            className="flex flex-col items-center"
+            onClick={() => setShow(false)}
+          >
             <h2>COLLECTION</h2>
             <div className="h-[1.5px] bg-gray-700 w-1/2 hidden"></div>
           </NavLink>
-          <NavLink to="/about" className="flex flex-col items-center">
+          <NavLink
+            to="/about"
+            className="flex flex-col items-center"
+            onClick={() => setShow(false)}
+          >
             <h2>ABOUT</h2>
             <div className="h-[1.5px] bg-gray-700 w-1/2 hidden"></div>
           </NavLink>
-          <NavLink to="/contact" className="flex flex-col items-center">
+          <NavLink
+            to="/contact"
+            className="flex flex-col items-center"
+            onClick={() => setShow(false)}
+          >
             <h2>CONTACT</h2>
             <div className="h-[1.5px] bg-gray-700 w-1/2 hidden"></div>
           </NavLink>

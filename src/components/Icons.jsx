@@ -2,7 +2,7 @@ import React from "react";
 import { assets } from "../assets/frontend_assets/assets";
 const Icons = () => {
   return (
-    <div className="flex flex-col sm:flex-row m-24 items-center justify-between sm:gap-2">
+    <div className="flex flex-col sm:flex-row items-center justify-around gap-12 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-base">
       <div className="flex flex-col items-center justify-center gap-2 m-auto mb-5">
         <img src={assets.exchange_icon} />
         <h1 className="text-1xl font-bold">Easy Exchange Policy</h1>

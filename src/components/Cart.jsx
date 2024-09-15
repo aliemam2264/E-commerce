@@ -31,7 +31,10 @@ const Cart = () => {
           value="1"
           className="border max-w-10 sm:max-w-20 sm:px-2 py-1"
         />
-        <img src={assets.bin_icon} className="w-4 sm:w-5 mr-4 cursor-pointer" />
+        <img
+          src={assets.bin_icon}
+          className="w-4 sm:w-5 mr-4 cursor-pointer ml-2"
+        />
       </div>
 
       {/* Cart Total */}

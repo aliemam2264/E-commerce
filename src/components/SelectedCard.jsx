@@ -24,13 +24,13 @@ const SelectedCard = () => {
   }, [id]);
 
   return (
-    <div>
-      <div className="flex gap-12 pt-10 sm:gap-12 flex-col sm:flex-row">
+    <div className="pt-10 transition-opacity ease-in duration-500 opacity-100">
+      <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
-          <div className="w-full sm:w-[18.7%] flex sm:flex-col overflow-x-auto">
+          <div className="w-full sm:w-[18.7%] flex sm:flex-col overflow-x-auto justify-between sm:justify-normal">
             <img
               src={prod.image}
-              className="flex-shrink-0 w-[24%] sm:w-full sm:mb-3 cursor-pointer pr-2"
+              className="flex-shrink-0 w-[24%] sm:w-full sm:mb-3 cursor-pointer"
             />
           </div>
           <div className="w-full sm:w-[80%]">
@@ -56,7 +56,7 @@ const SelectedCard = () => {
             {prod.price}
             {currency}
           </p>
-          <p className="w-2/3 mt-5 text-gray-500 font-medium text-lg">
+          <p className="md:w-4/5 mt-5 text-gray-500 font-medium text-lg">
             {prod.description}
           </p>
           <div className="flex flex-col gap-4 my-8">
@@ -114,9 +114,11 @@ const SelectedCard = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col mt-16">
-        <Title text1="RELATED" text2="PRODUCTS" />
-        <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 cursor-pointer">
+      <div className="text-center py-2 my-24">
+        <div className="inline-flex gap-2 items-center text-3xl mb-3">
+          <Title text1="RELATED" text2="PRODUCTS" />
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 cursor-pointer">
           {data.map((el) => {
             return <Card obj={el} key={el.id} currency={currency} />;
           })}

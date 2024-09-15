@@ -26,40 +26,39 @@ const Login = () => {
   return (
     <div>
       <form
-        className="flex flex-col items-center justify-center mt-[10%]"
+        className="flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4"
         onSubmit={formik.handleSubmit}
       >
-        <div className="text-4xl">
+        <div className="inline-flex items-center gap-2 mb-2 mt-10 text-4xl">
           <Title text2={"Login"} />
         </div>
-        <div className="flex flex-col gap-5 w-full items-center mt-5">
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            className="border-2 border-slate-950 sm:w-1/3 px-3 py-2"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          <span className="text-red-700">
-            {formik.touched.email && formik.errors.email}
-          </span>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            className="border-2 border-slate-950 sm:w-1/3 px-3 py-2"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          <span className="text-red-700">
-            {formik.touched.password && formik.errors.password}
-          </span>
-        </div>
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          className="border-2 border-slate-950 w-full px-3 py-2"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <span className="text-red-700">
+          {formik.touched.email && formik.errors.email}
+        </span>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="border-2 border-slate-950 w-full px-3 py-2"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <span className="text-red-700">
+          {formik.touched.password && formik.errors.password}
+        </span>
 
-        <div className="flex items-center justify-between w-1/3 cursor-pointer">
-          <span>Forget Your Password?</span>
+        <div className="flex justify-between w-full mt-[-8px]">
+          <span className="cursor-pointer">Forget Your Password?</span>
           <span
+            className="cursor-pointer"
             onClick={() => {
               navigate("/signup");
             }}

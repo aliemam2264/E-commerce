@@ -14,15 +14,15 @@ const Bestsellers = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="mt-16 flex flex-col items-center text-4xl">
+      <div className="mt-16 flex flex-col items-center text-3xl py-8">
         <Title text1="BEST" text2="SELLERS" />
-        <div className="flex items-center justify-center m-6 text-lg">
+        <div className="flex items-center justify-center w-3/4 m-auto text-xs sm:text-sm md:text-base">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the.
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 cursor-pointer">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 cursor-pointer">
         {data.map((el) => {
           return <Card obj={el} key={el.id} currency={currency} />;
         })}
